@@ -1,4 +1,5 @@
 NominationTracerApp::Application.routes.draw do
+  root :to => "admin#login"
   ActiveAdmin.routes(self)
 
   devise_for :admin_users, ActiveAdmin::Devise.config
