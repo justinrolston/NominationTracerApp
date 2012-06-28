@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120628233458) do
+ActiveRecord::Schema.define(:version => 20120628233734) do
 
   create_table "active_admin_comments", :force => true do |t|
     t.string   "resource_id",   :null => false
@@ -80,5 +80,14 @@ ActiveRecord::Schema.define(:version => 20120628233458) do
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
   end
+
+  create_table "ministry_positions", :force => true do |t|
+    t.string   "title"
+    t.integer  "ministry_id"
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
+  end
+
+  add_index "ministry_positions", ["ministry_id"], :name => "index_ministry_positions_on_ministry_id"
 
 end
